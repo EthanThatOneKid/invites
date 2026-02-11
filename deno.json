@@ -1,0 +1,15 @@
+{
+  "tasks": {
+    "start": "deno serve -A --unstable-kv main.tsx",
+    "test": "deno test -A --unstable-kv tests/"
+  },
+  "imports": {
+    "@fartlabs/rtx": "jsr:@fartlabs/rtx@^0.0.16",
+    "@std/ulid": "jsr:@std/ulid@^0.224.0",
+    "zod": "npm:zod@^3.22.4"
+  },
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "jsxImportSource": "@fartlabs/rtx"
+  }
+}
