@@ -25,7 +25,7 @@ navigating to your API's root URL (e.g., `http://localhost:8000/v1/invites`) in
 a web browser. The server will detect your browser's request for HTML and serve
 the console.
 
-![Admin Console Screenshot](https://github.com/user-attachments/assets/e301ae45-613e-4c1c-94a5-2a67c61ae3bd)
+![Invites Console Screenshot](https://github.com/user-attachments/assets/3d1cd62b-1c62-4f2c-9143-c5250cacaeb0)
 
 ### Deployment
 
