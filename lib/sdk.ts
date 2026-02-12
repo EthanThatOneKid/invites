@@ -1,21 +1,21 @@
 import type { CreateInviteParams, Invite, ListParams } from "./schemas.ts";
 
 /**
- * Options for creating an InvitesSdk.
+ * InvitesSdkOptions for creating an InvitesSdk.
  */
 export interface InvitesSdkOptions {
   /**
-   * The base URL of the invites API.
+   * baseUrl is the base URL of the invites API.
    */
   baseUrl: string;
 
   /**
-   * Optional API key for authentication.
+   * apiKey is the API key for authentication.
    */
   apiKey?: string;
 
   /**
-   * Optional custom fetch function.
+   * fetch is the fetch function to use for requests.
    */
   fetch?: typeof fetch;
 }

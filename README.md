@@ -41,10 +41,10 @@ the invites API:
 You can use the SDK to interact with your invites API.
 
 ```typescript
-import { InvitesSdk } from "./lib/sdk.ts";
+import { InvitesSdk } from "@fartlabs/invites/sdk";
 
 const sdk = new InvitesSdk({
-  baseUrl: "https://your-project-invites.deno.dev",
+  baseUrl: "https://my-project-invites.deno.dev",
   apiKey: "optional-api-key", // Include this if API_KEY is set on the server.
 });
 
