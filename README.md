@@ -1,6 +1,6 @@
 # invites
 
-API and SDK for managing invite codes.
+Standalone API, SDK, and web console for managing invite codes.
 
 ## Develop
 
@@ -13,17 +13,19 @@ your system.
 
 Run the following commands to develop:
 
-- `deno task start`: Start the API server and admin dashboard.
+- `deno task start`: Start the API server and admin console.
 - `deno task test`: Run the tests.
 
 ## Usage
 
-### Admin Dashboard
+### Admin Console
 
-The admin dashboard is hosted directly by the API server. You can access it by
+The admin console is hosted directly by the API server. You can access it by
 navigating to your API's root URL (e.g., `http://localhost:8000/v1/invites`) in
 a web browser. The server will detect your browser's request for HTML and serve
-the dashboard.
+the console.
+
+![Admin Console Screenshot](https://github.com/user-attachments/assets/e301ae45-613e-4c1c-94a5-2a67c61ae3bd)
 
 ### Deployment
 

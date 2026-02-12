@@ -126,6 +126,37 @@ export const router: Router = new Router()
 
     await invitesKv.delete(code);
     return new Response(null, { status: 204 });
+  })
+  .delete("/v1/invites", async (ctx) => {
+    const apiKey = Deno.env.get("API_KEY");
+    if (apiKey && ctx.request.headers.get("X-Api-Key") !== apiKey) {
+      return Response.json({ error: "Unauthorized" }, { status: 401 });
+    }
+
+    const url = new URL(ctx.request.url);
+    const all = url.searchParams.get("all") === "true";
+
+    if (all) {
+      await invitesKv.deleteAll();
+      return new Response(null, { status: 204 });
+    }
+
+    let body: { codes?: string[] } = {};
+    try {
+      body = await ctx.request.json();
+    } catch {
+      // Body might be empty
+    }
+
+    if (!body.codes || !Array.isArray(body.codes)) {
+      return Response.json(
+        { error: "Invalid parameters. 'codes' array or 'all=true' required." },
+        { status: 400 },
+      );
+    }
+
+    await invitesKv.deleteMany(body.codes);
+    return new Response(null, { status: 204 });
   });
 
 const server: Deno.ServeDefaultExport = {

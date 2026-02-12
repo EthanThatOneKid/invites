@@ -36,10 +36,12 @@ export interface CreateInviteParams {
    * code is the code to create.
    */
   code?: string;
+
   /**
    * alphabet is the custom alphabet to use for code generation.
    */
   alphabet?: string;
+
   /**
    * size is the custom size to use for code generation.
    */
@@ -65,14 +67,17 @@ export interface Invite {
    * code is the code of the invite.
    */
   code: string;
+
   /**
    * createdAt is the time the invite was created.
    */
   createdAt: number;
+
   /**
    * redeemedBy is the user who redeemed the invite.
    */
   redeemedBy: string | null;
+
   /**
    * redeemedAt is the time the invite was redeemed.
    */

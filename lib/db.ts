@@ -25,6 +25,29 @@ export class InvitesKv {
     await this.kv.delete(key);
   }
 
+  public async deleteMany(codes: string[]): Promise<void> {
+    const atomic = this.kv.atomic();
+    for (const code of codes) {
+      atomic.delete(["invites", code]);
+    }
+    const res = await atomic.commit();
+    if (!res.ok) {
+      throw new Error("Failed to delete invites");
+    }
+  }
+
+  public async deleteAll(): Promise<void> {
+    const iter = this.kv.list({ prefix: ["invites"] });
+    const atomic = this.kv.atomic();
+    for await (const res of iter) {
+      atomic.delete(res.key);
+    }
+    const res = await atomic.commit();
+    if (!res.ok) {
+      throw new Error("Failed to delete all invites");
+    }
+  }
+
   public async list(
     options?: ListParams,
   ): Promise<{ items: Invite[]; cursor: string }> {
