@@ -5,6 +5,15 @@
 
 Standalone API, SDK, and web console for managing invite codes.
 
+## Private betas
+
+This software is intended for private beta access to SaaS.
+
+Running a private beta with a controlled, trusted group helps you validate your
+idea and surface early bug reports before going viral. By limiting access, you
+can ensure a higher quality experience for your initial users and iterate
+quickly based on direct feedback.
+
 ## Develop
 
 ### Prerequisites
@@ -21,7 +30,7 @@ Run the following commands to develop:
 
 ## Usage
 
-### Admin Console
+### Admin console
 
 The admin console is hosted directly by the API server. You can access it by
 navigating to your API's root URL (e.g., `http://localhost:8000/v1/invites`) in
@@ -38,10 +47,10 @@ the invites API:
 1. **Fork the repository**: Create a new repository by forking this one. Name it
    based on your project (e.g., `my-project-invites`).
 2. **Create a Deno Deploy project**: Go to the
-   [Deno Deploy console](https://console.deno.com/) and create a new project.
+   [Deno Deploy console](https://console.deno.com/), create a new project, and
+   provision a Deno KV database, and connect it to your project.
 3. **Deploy**: Connect your forked repository to the new Deno Deploy project.
-   Deno Deploy will automatically set up a Deno KV database and deploy the API
-   for you.
+   Deno Deploy will automatically deploy the API for you.
 
 > [!TIP]
 > You can set an `API_KEY` environment variable in the Deno Deploy console to

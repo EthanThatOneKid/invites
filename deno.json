@@ -1,6 +1,6 @@
 {
   "name": "@fartlabs/invites",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "exports": {
     ".": "./main.ts",
     "./sdk": "./lib/sdk.ts",
